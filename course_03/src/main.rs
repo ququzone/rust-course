@@ -1,4 +1,6 @@
-use course_03::models::class::{Class, Grade, self};
+use course_03::models::class::{Class, Grade};
+use course_03::models::course::Course;
+use course_03::models::society::Society;
 use course_03::models::student;
 use course_03::models::student::Student;
 
@@ -40,4 +42,21 @@ fn main() {
     };
     let bob = student::find_first_by_name_clone(&all_students, String::from("Bob")).unwrap();
     class1.add_student(bob);
+    println!("{:?}", class1);
+
+    let mut couse1 = Course {
+        name: String::from("English"),
+        students: vec![],
+    };
+    let bob = student::find_first_by_name_clone(&all_students, String::from("Bob")).unwrap();
+    couse1.add_student(bob);
+    println!("{:?}", couse1);
+
+    let mut society = Society {
+        name: String::from("Game"),
+        members: vec![],
+    };
+    let bob = student::find_first_by_name_clone(&all_students, String::from("Bob")).unwrap();
+    society.add_student(bob);
+    println!("{:?}", society);
 }

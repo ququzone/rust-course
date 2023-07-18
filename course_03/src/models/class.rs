@@ -7,7 +7,7 @@ pub enum Grade {
     THREE,
     FOUR,
     FIVE,
-    SIX
+    SIX,
 }
 
 #[derive(Debug)]

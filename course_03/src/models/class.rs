@@ -16,3 +16,9 @@ pub struct Class {
     pub num: u32,
     pub students: Vec<Student>,
 }
+
+impl Class {
+    pub fn add_student(&mut self, student: Student) {
+        self.students.push(student);
+    }
+}

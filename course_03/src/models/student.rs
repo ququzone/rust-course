@@ -1,4 +1,4 @@
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Student {
     pub num: u32,
     pub name: String,
@@ -34,6 +34,13 @@ impl Student {
 pub fn find_first_by_name(students: &Vec<Student>, name: String) -> Option<(&Student, usize)> {
     if let Some(index) = students.iter().position(|s| s.name == name) {
         return Some((&students[index], index))
+    }
+    None
+}
+
+pub fn find_first_by_name_clone(students: &Vec<Student>, name: String) -> Option<Student> {
+    if let Some(index) = students.iter().position(|s| s.name == name) {
+        return Some(students[index].clone())
     }
     None
 }

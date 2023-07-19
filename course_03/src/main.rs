@@ -25,12 +25,18 @@ fn main() {
     assert_eq!(bob.unwrap().0.age, 10);
     let index = bob.unwrap().1;
     // increase bob age
-    let _ = &mut(all_students[index]).increase_age();
+    let _ = &mut (all_students[index]).increase_age();
 
     // remove foo from all students
-    assert!(!student::remove_first_by_name(&mut all_students, String::from("foo")), "remove foo student");
+    assert!(
+        !student::remove_first_by_name(&mut all_students, String::from("foo")),
+        "remove foo student"
+    );
     // remove tom from all students
-    assert!(student::remove_first_by_name(&mut all_students, String::from("Tom")), "can't remove tom student");
+    assert!(
+        student::remove_first_by_name(&mut all_students, String::from("Tom")),
+        "can't remove tom student"
+    );
     assert_eq!(all_students.len(), 3);
     println!("{:?}", all_students);
     // ------ Student CURD end -----
@@ -49,7 +55,6 @@ fn main() {
     class1.remove_student(String::from("Alice"));
     println!("{:?}", class1);
     // ------ Class CURD end -----
-
 
     let mut couse1 = Course {
         name: String::from("English"),

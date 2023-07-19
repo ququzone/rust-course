@@ -14,7 +14,7 @@ impl Course {
     pub fn remove_student(&mut self, name: String) -> bool {
         if let Some(index) = self.students.iter().position(|s| s.name == name) {
             self.students.remove(index);
-            return true
+            return true;
         }
         false
     }

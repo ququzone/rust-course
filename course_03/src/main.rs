@@ -35,6 +35,7 @@ fn main() {
     println!("{:?}", all_students);
     // ------ Student CURD end -----
 
+    // ------ Class CURD begin -----
     let mut class1 = Class {
         grade: Grade::ONE,
         num: 1,
@@ -42,7 +43,13 @@ fn main() {
     };
     let bob = student::find_first_by_name_clone(&all_students, String::from("Bob")).unwrap();
     class1.add_student(bob);
+    let alice = student::find_first_by_name_clone(&all_students, String::from("Alice")).unwrap();
+    class1.add_student(alice);
     println!("{:?}", class1);
+    class1.remove_student(String::from("Alice"));
+    println!("{:?}", class1);
+    // ------ Class CURD end -----
+
 
     let mut couse1 = Course {
         name: String::from("English"),

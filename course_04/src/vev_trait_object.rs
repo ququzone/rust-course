@@ -45,7 +45,7 @@ impl Shape for Square {
 }
 
 struct Circle {
-    r: f64
+    r: f64,
 }
 
 impl Circle {
@@ -68,11 +68,7 @@ pub fn iterator() {
     let r = Rectangle::new(3f64, 5f64);
     let s = Square::new(5f64);
     let c = Circle::new(3f64);
-    let shapes: Vec<&dyn Shape> = vec![
-        &r,
-        &s,
-        &c,
-    ];
+    let shapes: Vec<&dyn Shape> = vec![&r, &s, &c];
 
     for (i, shape) in shapes.iter().enumerate() {
         println!("Shape {} area is {}", i, shape.area());
